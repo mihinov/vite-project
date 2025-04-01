@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-  base: '/mihinov.github.io/', // Укажи название репозитория
-});
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/vite-project/' : '/', // В dev-режиме base = '/'
+}));
