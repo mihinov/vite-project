@@ -46,9 +46,8 @@ jobs:
         run: |
           npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
-          publish_branch: gh-pages
+          branch: gh-pages # Ветка, куда будет загружен билд
+          folder: dist # Папка с билдом
